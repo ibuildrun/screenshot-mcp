@@ -7,9 +7,11 @@ MCP server for capturing screenshots of desktop windows on Windows. Allows AI as
 - **screenshot_window** — capture a specific window by title (partial match)
 - **screenshot_screen** — capture the entire screen
 - **screenshot_region** — capture a specific screen region (x, y, width, height)
+- **click_window** — click at a position inside a window's client area
+- **get_window_size** — get the client area size of a window
 - **list_windows** — list all visible windows with titles and sizes
 
-Returns images as base64-encoded PNG that AI can analyze.
+Returns images as base64-encoded JPEG with automatic resizing and compression.
 
 ## Requirements
 
@@ -64,6 +66,8 @@ Or with uvx (no install needed):
 > screenshot_window "Teeworlds"
 > screenshot_screen
 > screenshot_region 0 0 800 600
+> click_window "Teeworlds" 400 300
+> get_window_size "Teeworlds"
 ```
 
 ## License
